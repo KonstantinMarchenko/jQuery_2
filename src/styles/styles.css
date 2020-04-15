@@ -1,0 +1,227 @@
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.image {
+  position: absolute;
+}
+.image:hover {
+  cursor: pointer;
+}
+.image_original {
+  margin: auto;
+}
+.image-container-single {
+  vertical-align: top;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+}
+.image-container-single_original-size {
+  text-align: center;
+  display: inline-block;
+  float: left;
+  width: 60%;
+  height: auto;
+}
+.image-container {
+  margin: auto;
+  margin-top: 100px;
+  width: 80%;
+  height: 80%;
+}
+.image-container_hidden {
+  display: none;
+}
+.image-container_visible {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal__content {
+  margin: auto;
+}
+.modal__content-forward {
+  width: 20%;
+  float: left;
+  text-align: center;
+  display: inline-block;
+  font-size: 60px;
+  color: white;
+  font-family: "Comic Sans MS", serif;
+  transition-duration: 0.5s;
+  height: 350px;
+  padding-top: 350px;
+}
+.modal__content-forward:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+.modal__content-forward-disabled:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: default;
+}
+
+.button-back {
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: dimgray;
+  font-size: 25px;
+  font-family: "Comic Sans MS", serif;
+  transition-duration: 0.5s;
+}
+.button-back:hover {
+  font-size: 35px;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+}
+
+.text__field {
+  display: block;
+  width: 80%;
+  font-family: "Comic Sans MS", serif;
+  font-size: 25px;
+  margin: 25px;
+}
+.text__field_image {
+  color: wheat;
+  text-align: center;
+  width: 100%;
+  font-size: 35px;
+  margin: 0px;
+}
+
+.div-close {
+  width: 100%;
+  text-align: center;
+  height: 200px;
+  font-size: 50px;
+  color: white;
+  font-family: "Comic Sans MS", serif;
+}
+.div-close__button {
+  float: right;
+  padding: 50px;
+  padding-right: 100px;
+  transition-duration: 0.5s;
+}
+.div-close__button:hover {
+  cursor: pointer;
+  font-size: 70px;
+}
+
+.page-next {
+  width: 40px;
+  height: 40px;
+  margin-left: 6px;
+  margin-top: 10px;
+  border: 2px solid black;
+  display: inline-block;
+  background-color: white;
+  border-radius: 5px;
+  vertical-align: center;
+  font-family: "Comic Sans MS", serif;
+  font-size: 15px;
+  transition-duration: 0.5s;
+}
+.page-next:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+.page-next:disabled {
+  background-color: white;
+  cursor: default;
+}
+.page-next:focus {
+  outline: none;
+}
+.page-container {
+  text-align: center;
+  width: 650px;
+  margin: auto;
+  height: 60px;
+}
+
+.search-container {
+  display: block;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 5px;
+  width: 650px;
+}
+.search-field {
+  display: block;
+  width: 100px;
+  font-size: 20px;
+  font-family: "Comic Sans MS", serif;
+  border-radius: 5px;
+  border: 1px solid black;
+  transition-duration: 0.5s;
+}
+.search-field:focus {
+  border: 2px solid black;
+  width: 650px;
+  outline: none;
+}
+
+.table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+  width: 650px;
+}
+.table__row {
+  display: block;
+}
+.table__header {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
+  width: 650px;
+  font-size: 20px;
+  font-family: "Comic Sans MS", serif;
+  transition-duration: 0.5s;
+}
+.table__header:hover {
+  cursor: default;
+}
+.table__cell {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 650px;
+  color: dimgray;
+  font-size: 20px;
+  font-family: "Comic Sans MS", serif;
+  transition-duration: 0.5s;
+}
+.table__cell:hover {
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
