@@ -30,7 +30,7 @@ body {
 }
 .image-container {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 25px;
   width: 80%;
   height: 80%;
 }
@@ -164,7 +164,7 @@ body {
 .search-container {
   display: block;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 5px;
   width: 650px;
 }
@@ -223,7 +223,7 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .table {
     width: 300px;
   }
@@ -250,11 +250,11 @@ body {
   }
 
   .page-next {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-top: 5px;
     border-radius: 2px;
-    font-size: 10px;
+    font-size: 15px;
   }
   .page-container {
     width: 300px;
@@ -279,6 +279,9 @@ body {
     height: 175px;
     padding-top: 175px;
   }
+  .modal__content-forward:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
   .button-back {
     margin-bottom: 12px;
@@ -298,13 +301,14 @@ body {
   }
 
   .image-container-single {
-    width: 35px;
-    height: 35px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
   }
 
   img {
-    width: 35px;
-    height: 35px;
+    width: 100px;
+    height: 100px;
   }
 
   .image_original {
@@ -312,7 +316,7 @@ body {
     height: 175px;
   }
 }
-@media screen and (min-width: 321px) and (max-width: 768px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .table {
     width: 450px;
   }
@@ -343,10 +347,10 @@ body {
     height: 30px;
     margin-top: 7px;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 20px;
   }
   .page-container {
-    width: 450px;
+    width: 400px;
     height: 45px;
   }
 
@@ -368,6 +372,9 @@ body {
     height: 250px;
     padding-top: 250px;
   }
+  .modal__content-forward:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
   .button-back {
     margin-bottom: 20px;
@@ -387,13 +394,14 @@ body {
   }
 
   .image-container-single {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
   }
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
   }
 
   .image_original {

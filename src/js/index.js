@@ -16,7 +16,12 @@ let titleAsc = true;
 let defaultAsc = true;
 let elementsPerPage = 10;
 let dataSource;
-const maxAmountOfPageButtons = 8;
+let maxAmountOfPageButtons = 8;
+
+if ($(window).width() <= 375) {
+  maxAmountOfPageButtons = 5;
+  elementsPerPage = 5;
+}
 
 
 String.prototype.format = function () {
@@ -109,6 +114,7 @@ $(document).ready(function () {
     }).then(data => {
     photoSetsArray = data.photosets.photoset;
     $('<div class="search-container"></div>').appendTo('body');
+    $('<div class="text__field" style="margin: auto; width: 250px; margin-bottom: 25px; text-align: center">All photo sets</div>').appendTo('.search-container');
     $('<input id="search" type="text" class="search-field" style="margin-bottom: 5px;">').appendTo('.search-container');
     $('<button id="btn_sort_default" class="button-back" style="margin-bottom: 5px; display: inline-block">Sort by default</button>').appendTo('.search-container');
     $('<button id="btn_sort_title" class="button-back" style="margin-bottom: 5px; display: inline-block;  margin-left: 5px;">Sort by title</button>').appendTo('.search-container');
@@ -178,6 +184,7 @@ $('body').on('click', '.page-next', function () {
   $('.table').hide();
   $('#page_container_1').hide();
   $('.search-container').hide();
+  $('<div class="text__field" style="text-align: center; width: 200px; margin: auto; margin-bottom: 25px; ">Selected photo set</div>').appendTo('#img_container_1')
   $('<button id="btn_back" class="button-back">Back</button>').appendTo('#img_container_1');
   $('<div class="text__field">' + dataSource[currentId].title._content + '</div>').appendTo('#img_container_1');
   $('<div class="text__field">' + dataSource[currentId].description._content + '</div>').appendTo('#img_container_1');
