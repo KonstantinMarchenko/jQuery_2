@@ -1,7 +1,6 @@
 body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -222,6 +221,185 @@ body {
   background-color: lightgray;
   color: black;
   cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .table {
+    width: 300px;
+  }
+  .table__header {
+    font-size: 10px;
+  }
+  .table__cell {
+    font-size: 10px;
+  }
+  .table__cell:hover {
+    font-size: 15px;
+  }
+
+  .search-container {
+    margin-top: 50px;
+    width: 300px;
+  }
+  .search-field {
+    width: 50px;
+    font-size: 10px;
+  }
+  .search-field:focus {
+    width: 250px;
+  }
+
+  .page-next {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border-radius: 2px;
+    font-size: 10px;
+  }
+  .page-container {
+    width: 300px;
+    height: 30px;
+  }
+
+  .div-close {
+    height: 50px;
+    font-size: 25px;
+  }
+  .div-close__button {
+    float: right;
+    padding: 25px;
+    padding-right: 50px;
+  }
+  .div-close__button:hover {
+    font-size: 35px;
+  }
+
+  .modal__content-forward {
+    font-size: 30px;
+    height: 175px;
+    padding-top: 175px;
+  }
+
+  .button-back {
+    margin-bottom: 12px;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+  .button-back:hover {
+    font-size: 17px;
+  }
+
+  .text__field {
+    font-size: 12px;
+    margin: 12px;
+  }
+  .text__field_image {
+    font-size: 17px;
+  }
+
+  .image-container-single {
+    width: 35px;
+    height: 35px;
+  }
+
+  img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .image_original {
+    width: 175px;
+    height: 175px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .table {
+    width: 450px;
+  }
+  .table__header {
+    font-size: 15px;
+  }
+  .table__cell {
+    font-size: 15px;
+  }
+  .table__cell:hover {
+    font-size: 20px;
+  }
+
+  .search-container {
+    margin-top: 75px;
+    width: 450px;
+  }
+  .search-field {
+    width: 75px;
+    font-size: 15px;
+  }
+  .search-field:focus {
+    width: 375px;
+  }
+
+  .page-next {
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+    border-radius: 3px;
+    font-size: 15px;
+  }
+  .page-container {
+    width: 450px;
+    height: 45px;
+  }
+
+  .div-close {
+    height: 75px;
+    font-size: 40px;
+  }
+  .div-close__button {
+    float: right;
+    padding: 40px;
+    padding-right: 75px;
+  }
+  .div-close__button:hover {
+    font-size: 50px;
+  }
+
+  .modal__content-forward {
+    font-size: 45px;
+    height: 250px;
+    padding-top: 250px;
+  }
+
+  .button-back {
+    margin-bottom: 20px;
+    border-radius: 3px;
+    font-size: 20px;
+  }
+  .button-back:hover {
+    font-size: 25px;
+  }
+
+  .text__field {
+    font-size: 20px;
+    margin: 20px;
+  }
+  .text__field_image {
+    font-size: 25px;
+  }
+
+  .image-container-single {
+    width: 50px;
+    height: 50px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .image_original {
+    width: 270px;
+    height: 270px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
