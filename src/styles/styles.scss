@@ -6,6 +6,11 @@ body {
   user-select: none;
 }
 
+img{
+  width: 5em;
+  height: 5em;
+}
+
 .image {
   position: absolute;
 
@@ -20,14 +25,15 @@ body {
   &-container-single {
     vertical-align: top;
     display: inline-block;
-    width: 75px;
-    height: 75px;
+    width: 5em;
+    height: 5em;
 
     &_original-size {
       text-align: center;
       display: inline-block;
       float: left;
       width: 60%;
+      max-width: 60%;
       height: auto;
     }
   }
@@ -67,12 +73,12 @@ body {
       float: left;
       text-align: center;
       display: inline-block;
-      font-size: 60px;
+      font-size: 4em;
       color: white;
       font-family: "Comic Sans MS", serif;
       transition-duration: 0.5s;
-      height: 350px;
-      padding-top: 350px;
+      height: 5em;
+      padding-top: 5em;
 
       &:hover {
         background-color: lightgray;
@@ -93,17 +99,16 @@ body {
   &-back {
     display: block;
     margin: auto;
-    margin-bottom: 25px;
     border: 2px solid black;
     border-radius: 5px;
     background-color: white;
     color: dimgray;
-    font-size: 25px;
+    font-size: 1.5em;
     font-family: "Comic Sans MS", serif;
     transition-duration: 0.5s;
 
     &:hover {
-      font-size: 35px;
+      font-size: 2em;
       background-color: lightgray;
       color: black;
       cursor: pointer;
@@ -114,17 +119,18 @@ body {
 .text {
   &__field {
     display: block;
-    width: 80%;
+    width: 100%;
     font-family: "Comic Sans MS", serif;;
-    font-size: 25px;
-    margin: 25px;
+    font-size: 2em;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 0.5em;
 
     &_image {
       color: wheat;
       text-align: center;
       width: 100%;
-      font-size: 35px;
-      margin: 0px;
+      font-size: 1.5em;
     }
   }
 }
@@ -132,29 +138,27 @@ body {
 .div-close {
   width: 100%;
   text-align: center;
-  height: 200px;
-  font-size: 50px;
+  height: 10em;
   color: white;
   font-family: "Comic Sans MS", serif;;
 
   &__button {
     float: right;
-    padding: 50px;
-    padding-right: 100px;
+    padding: 2em;
     transition-duration: 0.5s;
+    font-size: 3em;
 
     &:hover {
       cursor: pointer;
-      font-size: 70px;
     }
   }
 }
 
 .page {
   &-next {
-    width: 40px;
-    height: 40px;
-    margin-left: 6px;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 5px;
     margin-top: 10px;
     border: 2px solid black;
     display: inline-block;
@@ -162,7 +166,7 @@ body {
     border-radius: 5px;
     vertical-align: center;
     font-family: "Comic Sans MS", serif;
-    font-size: 15px;
+    font-size: 1.5em;
     transition-duration: 0.5s;
 
     &:hover {
@@ -182,9 +186,9 @@ body {
 
   &-container {
     text-align: center;
-    width: 650px;
+    width: 100%;
     margin: auto;
-    height: 60px;
+    height: 3em;
   }
 }
 
@@ -192,23 +196,22 @@ body {
   &-container {
     display: block;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 5px;
-    width: 650px;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    width: 100%;
   }
 
   &-field {
     display: block;
-    width: 100px;
-    font-size: 20px;
+    width: 25%;
+    font-size: 1.5em;
     font-family: "Comic Sans MS", serif;
     border-radius: 5px;
     border: 1px solid black;
     transition-duration: 0.5s;
 
     &:focus {
-      border: 2px solid black;
-      width: 650px;
+      width: 75%;
       outline: none;
     }
   }
@@ -218,9 +221,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-collapse: separate;
-  width: 650px;
+  width: 100%;
+  font-size: 1.5em;
 
   &__row {
+    width: 100%;
     display: block;
   }
 
@@ -229,8 +234,6 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     color: black;
-    width: 650px;
-    font-size: 20px;
     font-family: "Comic Sans MS", serif;
     transition-duration: 0.5s;
 
@@ -243,15 +246,17 @@ body {
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
-    width: 650px;
     color: dimgray;
-    font-size: 20px;
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 0.1em;
     font-family: "Comic Sans MS", serif;
     transition-duration: 0.5s;
 
     &:hover {
       border-radius: 10px;
-      font-size: 30px;
+      font-size: 1.5em;
       background-color: lightgray;
       color: black;
       cursor: pointer;
@@ -259,51 +264,26 @@ body {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 320px) {
   .table {
-    width: 300px;
+    font-size: 0.5em;
 
     &__header {
-      font-size: 10px;
+      font-size: 0.5em;
     }
 
     &__cell {
-      font-size: 10px;
+      font-size: 0.5em;
 
       &:hover {
-        font-size: 15px;
+        font-size: 0.5em;
       }
     }
   }
 
   .search {
-    &-container {
-      margin-top: 50px;
-      width: 300px;
-    }
-
     &-field {
-      width: 50px;
-      font-size: 10px;
-
-      &:focus {
-        width: 250px;
-      }
-    }
-  }
-
-  .page {
-    &-next {
-      width: 30px;
-      height: 30px;
-      margin-top: 5px;
-      border-radius: 2px;
-      font-size: 15px;
-    }
-
-    &-container {
-      width: 300px;
-      height: 30px;
+      font-size: 0.7em;
     }
   }
 
@@ -315,17 +295,13 @@ body {
       float: right;
       padding: 25px;
       padding-right: 50px;
-
-      &:hover {
-        font-size: 35px;
-      }
     }
   }
 
   .modal {
     &__content {
       &-forward {
-        font-size: 30px;
+        font-size: 50px;
         height: 175px;
         padding-top: 175px;
         &:hover{
@@ -339,21 +315,21 @@ body {
     &-back {
       margin-bottom: 12px;
       border-radius: 2px;
-      font-size: 12px;
+      font-size: 0.5em;
 
       &:hover {
-        font-size: 17px;
+        font-size: 0.5em;
       }
     }
   }
 
   .text {
     &__field {
-      font-size: 12px;
+      font-size: 0.5em;
       margin: 12px;
 
       &_image {
-        font-size: 17px;
+        font-size: 0.5em;
       }
     }
   }
@@ -375,113 +351,89 @@ body {
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 768px) {
+@media screen and (min-width: 321px) and (max-width: 768px) {
   .table {
-    width: 450px;
+    font-size: 1em;
 
     &__header {
-      font-size: 15px;
+      font-size: 1em;
     }
 
     &__cell {
-      font-size: 15px;
+      font-size: 1em;
 
       &:hover {
-        font-size: 20px;
+        font-size: 1em;
       }
     }
   }
+
   .search {
-    &-container {
-      margin-top: 75px;
-      width: 450px;
-    }
-
     &-field {
-      width: 75px;
-      font-size: 15px;
-
-      &:focus {
-        width: 375px;
-      }
+      font-size: 0.7em;
     }
   }
-  .page {
-    &-next {
-      width: 30px;
-      height: 30px;
-      margin-top: 7px;
-      border-radius: 3px;
-      font-size: 20px;
-    }
 
-    &-container {
-      width: 400px;
-      height: 45px;
-    }
-  }
   .div-close {
-    height: 75px;
-    font-size: 40px;
+    height: 50px;
+    font-size: 30px;
 
     &__button {
       float: right;
-      padding: 40px;
-      padding-right: 75px;
-
-      &:hover {
-        font-size: 50px;
-      }
+      padding: 25px;
+      padding-right: 50px;
     }
   }
-  .modal {
-    &__content {
-      &-forward {
-        font-size: 45px;
-        height: 250px;
-        padding-top: 250px;
-        &:hover{
-          background-color: rgba(0, 0, 0, 0.9);
+
+    .modal {
+      &__content {
+        &-forward {
+          font-size: 50px;
+          height: 200px;
+          padding-top: 200px;
+          &:hover{
+            background-color: rgba(0, 0, 0, 0.9);
+          }
         }
       }
     }
-  }
 
-  .button {
-    &-back {
-      margin-bottom: 20px;
-      border-radius: 3px;
-      font-size: 20px;
+    .button {
+      &-back {
+        margin-bottom: 12px;
+        border-radius: 2px;
+        font-size: 0.7em;
 
-      &:hover {
-        font-size: 25px;
+        &:hover {
+          font-size: 0.7em;
+        }
       }
     }
-  }
-  .text {
-    &__field {
-      font-size: 20px;
-      margin: 20px;
 
-      &_image {
-        font-size: 25px;
+    .text {
+      &__field {
+        font-size: 1em;
+        margin: 12px;
+
+        &_image {
+          font-size: 1em;
+        }
       }
     }
-  }
 
-  .image-container-single {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
-  }
+    .image-container-single {
+      width: 125px;
+      height: 125px;
+      margin: 5px;
+    }
 
-  img {
-    width: 150px;
-    height: 150px;
-  }
+    img {
+      width: 125px;
+      height: 125px;
+    }
 
-  .image_original{
-    width: 270px;
-    height: 270px;
-  }
+    .image_original{
+      width: 250px;
+      height: 250px;
+    }
 }

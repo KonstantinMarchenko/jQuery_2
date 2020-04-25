@@ -1,4 +1,4 @@
-import '../styles/styles.css';
+// import '../styles/styles.css';
 
 let userId = '48600090482%40N01';
 let apiKey = 'f6146b5aea320305af01030c6fc04c59';
@@ -114,10 +114,10 @@ $(document).ready(function () {
     }).then(data => {
     photoSetsArray = data.photosets.photoset;
     $('<div class="search-container"></div>').appendTo('body');
-    $('<div class="text__field" style="margin: auto; width: 250px; margin-bottom: 25px; text-align: center">All photo sets</div>').appendTo('.search-container');
+    $('<div class="text__field">All photo sets</div>').appendTo('.search-container');
     $('<input id="search" type="text" class="search-field" style="margin-bottom: 5px;">').appendTo('.search-container');
-    $('<button id="btn_sort_default" class="button-back" style="margin-bottom: 5px; display: inline-block">Sort by default</button>').appendTo('.search-container');
-    $('<button id="btn_sort_title" class="button-back" style="margin-bottom: 5px; display: inline-block;  margin-left: 5px;">Sort by title</button>').appendTo('.search-container');
+    $('<button id="btn_sort_default" class="button-back" style="display: inline-block">Sort by default</button>').appendTo('.search-container');
+    $('<button id="btn_sort_title" class="button-back" style="display: inline-block;  margin-left: 0.5em;">Sort by title</button>').appendTo('.search-container');
     $('<table id="table_1" class="table"></table>').appendTo('body');
     $('<tr id="tr_header" class="table__row-header"></tr>').appendTo('#table_1');
     $('<th id="th_1" class="table__header">' + photoSetsArray[0].username + '\'s photo sets</th>').appendTo('#tr_header');
@@ -184,10 +184,10 @@ $('body').on('click', '.page-next', function () {
   $('.table').hide();
   $('#page_container_1').hide();
   $('.search-container').hide();
-  $('<div class="text__field" style="text-align: center; width: 200px; margin: auto; margin-bottom: 25px; ">Selected photo set</div>').appendTo('#img_container_1')
+  $('<div class="text__field" style="text-align: center; margin: auto; margin-bottom: 0.5em; ">Selected photo set</div>').appendTo('#img_container_1')
   $('<button id="btn_back" class="button-back">Back</button>').appendTo('#img_container_1');
   $('<div class="text__field">' + dataSource[currentId].title._content + '</div>').appendTo('#img_container_1');
-  $('<div class="text__field">' + dataSource[currentId].description._content + '</div>').appendTo('#img_container_1');
+  $('<div class="text__field" style="font-size: 1em">' + dataSource[currentId].description._content + '</div>').appendTo('#img_container_1');
   $('<div id="photo_count_' + dataSource[currentId].count_photos + '" class="text__field">Photos: ' + dataSource[currentId].count_photos + '</div>').appendTo('#img_container_1');
   fetch(photosUrl.format(apiKey, dataSource[currentId].id, dataSource[currentId].owner))
     .then(response => {
@@ -234,7 +234,7 @@ function showModal(index) {
       $('<div id="btn_image_back" class="modal__content-forward">&laquo;</div>').appendTo('#modal_content_1');
       $('<div class="image-container-single_original-size"></div>').appendTo('#modal_content_1');
       $('<div id="btn_image_forward" class="modal__content-forward">&raquo;</div>').appendTo('#modal_content_1');
-      $('<img id="img_original" src="' + data.url + '" alt="image of original size" class="image_original">').appendTo('.image-container-single_original-size');
+      $('<img id="img_original" src="' + data.url + '" alt="image of original size" class="image_original" style="width: 60%; height: auto">').appendTo('.image-container-single_original-size');
       $('<div class="text__field_image">' + photosArray[curImgIndex].title + '</div>').appendTo('.image-container-single_original-size');
       if (parseInt(curImgIndex) === 0) {
         $('#btn_image_back').hide();
