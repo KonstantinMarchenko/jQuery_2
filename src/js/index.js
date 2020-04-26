@@ -1,4 +1,4 @@
-// import '../styles/styles.css';
+import '../styles/styles.css';
 
 let userId = '48600090482%40N01';
 let apiKey = 'f6146b5aea320305af01030c6fc04c59';
