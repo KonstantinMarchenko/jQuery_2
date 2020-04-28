@@ -5,7 +5,7 @@ let apiKey = 'f6146b5aea320305af01030c6fc04c59';
 let dataUrl = 'https://www.flickr.com/services/rest/?method=flickr.photosets.getList&api_key={0}&user_id={1}&format=json&nojsoncallback=1';
 let photosUrl = 'https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key={0}&photoset_id={1}&user_id={2}&format=json&nojsoncallback=1';
 let singlePhotoUrl = 'https://farm{0}.staticflickr.com/{1}/{2}_{3}_s.jpg';
-let singlePhotoUrlOriginal = 'https://farm{0}.staticflickr.com/{1}/{2}_{3}.jpg';
+let singlePhotoUrlOriginal = 'https://farm{0}.staticflickr.com/{1}/{2}_{3}_z.jpg';
 let photoSetsArray;
 let photosArray;
 let pagesNumber;
@@ -224,29 +224,38 @@ $('body').on('click', '.page-next', function () {
 
 function showModal(index) {
   curImgIndex = index;
-  fetch(singlePhotoUrlOriginal.format(photosArray[curImgIndex].farm, photosArray[curImgIndex].server, photosArray[curImgIndex].id, photosArray[curImgIndex].secret))
-    .then(response => {
-      return response;
-    })
-    .then(data => {
-      $('#modal_content_1').empty();
-      $('<div id="btn_close_modal" class="div-close"><span class="div-close__button">&times;</span></div>').appendTo('#modal_content_1');
-      $('<div id="btn_image_back" class="modal__content-forward">&laquo;</div>').appendTo('#modal_content_1');
-      $('<div class="image-container-single_original-size"></div>').appendTo('#modal_content_1');
-      $('<div id="btn_image_forward" class="modal__content-forward">&raquo;</div>').appendTo('#modal_content_1');
-      $('<img id="img_original" src="' + data.url + '" alt="image of original size" class="image_original" style="width: 60%; height: auto">').appendTo('.image-container-single_original-size');
-      $('<div class="text__field_image">' + photosArray[curImgIndex].title + '</div>').appendTo('.image-container-single_original-size');
-      if (parseInt(curImgIndex) === 0) {
-        $('#btn_image_back').hide();
-      }
-      if (parseInt(curImgIndex) === currentPhotoCount - 1) {
-        $('#btn_image_forward').hide();
-      }
-      $('#modal_1').show();
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  if (curImgIndex >= 0 && curImgIndex <= currentPhotoCount - 1) {
+    fetch(singlePhotoUrlOriginal.format(photosArray[curImgIndex].farm, photosArray[curImgIndex].server, photosArray[curImgIndex].id, photosArray[curImgIndex].secret))
+      .then(response => {
+        return response;
+      })
+      .then(data => {
+        $('#modal_content_1').empty();
+        $('<div id="div_close_modal" class="div-close"></div>').appendTo('#modal_content_1');
+        $('<div id="btn_image_back" class="modal__content-forward">&laquo;</div>').appendTo('#modal_content_1');
+        $('<div class="image-container-single_original-size"></div>').appendTo('#modal_content_1');
+        $('<div id="btn_image_forward" class="modal__content-forward">&raquo;</div>').appendTo('#modal_content_1');
+        $('<img id="img_original" src="' + data.url + '" alt="image of original size" class="image_original" style="height: 75vh; width: 60vw">').appendTo('.image-container-single_original-size');
+        $('<div class="text__field_image">' + photosArray[curImgIndex].title + '</div>').appendTo('.image-container-single_original-size');
+        if (parseInt(curImgIndex) === 0) {
+          $('#btn_image_back').addClass('modal__content-forward-disabled');
+        }
+        if (parseInt(curImgIndex) === currentPhotoCount - 1) {
+          $('#btn_image_forward').addClass('modal__content-forward-disabled');
+        }
+        $('#modal_1').show();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  } else {
+     if (curImgIndex < 0) {
+       curImgIndex = 0;
+     }
+    if (curImgIndex > currentPhotoCount - 1) {
+      curImgIndex = currentPhotoCount - 1;
+    }
+  }
 }
 
 let modal = document.getElementById("modal_1");
@@ -257,7 +266,7 @@ window.onclick = function (event) {
   }
 };
 
-$('#modal_content_1').on('click', '#btn_close_modal', function () {
+$('#modal_content_1').on('click', '#div_close_modal', function () {
   $('#modal_content_1').empty();
   $('#modal_1').hide();
 }).on('click', '#btn_image_back', function () {
